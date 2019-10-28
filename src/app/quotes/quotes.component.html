@@ -5,7 +5,7 @@
   <div *ngFor='let qoute of qoutes;let i = index'>
     <li>{{qoute.name}}</li>
     <button (click)='toggleDetails(i)'>Toggle Details</button>
-    <app-qoutes-detail *ngIf='qoute.showDescription' [quote]='qoute'></app-qoutes-detail>  
+    <app-qoutes-detail *ngIf='qoute.showDescription' [quote]='qoute'(isComplete) = 'completeGoal($event,i)'></app-qoutes-detail>  
   </div>
 </ul>
 <p *ngIf='qoutes.length > 5'>You have too many quotes</p>
